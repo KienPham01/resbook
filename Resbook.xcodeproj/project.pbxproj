@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0FD858C1376F6E9DE54FFB46 /* Pods_Resbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EF1330CB4937A00484945A /* Pods_Resbook.framework */; };
+		180227A32286FA1000927898 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A22286FA1000927898 /* FeedVC.swift */; };
+		180227A52286FA5400927898 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A42286FA5300927898 /* FeedCell.swift */; };
+		180227A8228701E000927898 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A7228701E000927898 /* Message.swift */; };
+		18BA01B32286B40B00726460 /* Chatmessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA01B22286B40B00726460 /* Chatmessages.storyboard */; };
+		18BA01B92286BA5D00726460 /* ChatMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */; };
+		18BA01BB2286BB8400726460 /* ChatMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */; };
 		BE1398D5227C3C1800CA8FF0 /* UserProfileParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1398D4227C3C1800CA8FF0 /* UserProfileParameter.swift */; };
 		BE13A89D228451A300D32C48 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13A89B228451A300D32C48 /* InsertDataViewController.swift */; };
 		BE13A89E228451A300D32C48 /* InsertDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE13A89C228451A300D32C48 /* InsertDataViewController.xib */; };
@@ -47,6 +53,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180227A22286FA1000927898 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		180227A42286FA5300927898 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		180227A7228701E000927898 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		18BA01B22286B40B00726460 /* Chatmessages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chatmessages.storyboard; sourceTree = "<group>"; };
+		18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesCell.swift; sourceTree = "<group>"; };
+		18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesVC.swift; sourceTree = "<group>"; };
 		41EFC674B9879119583F1EB8 /* Pods-Resbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resbook.debug.xcconfig"; path = "Target Support Files/Pods-Resbook/Pods-Resbook.debug.xcconfig"; sourceTree = "<group>"; };
 		70EF1330CB4937A00484945A /* Pods_Resbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		822C20AD5BBE9A336C0C3216 /* Pods-Resbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resbook.release.xcconfig"; path = "Target Support Files/Pods-Resbook/Pods-Resbook.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +115,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180227A6228701A600927898 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				180227A7228701E000927898 /* Message.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		18BA01B12286AF5200726460 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				18BA01B72286B9CE00726460 /* View */,
+				18BA01B22286B40B00726460 /* Chatmessages.storyboard */,
+				18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */,
+				180227A22286FA1000927898 /* FeedVC.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		18BA01B72286B9CE00726460 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */,
+				180227A42286FA5300927898 /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		930F0010F59950B2F2155683 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				BE8F39A7227C6BBA0051BE4A /* DataServices.swift */,
+				18BA01B12286AF5200726460 /* Chat */,
 				BEF62C7E227BEE25005364EC /* Dashboard */,
 				BEF62C7B227BEDC5005364EC /* Authentication */,
 			);
@@ -275,6 +316,7 @@
 		BEF62C95227C1147005364EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				180227A6228701A600927898 /* Message */,
 				BE8DAFB32282C80400E0B947 /* Book Management */,
 				BE8DAFB22282C7FA00E0B947 /* Authentication */,
 			);
@@ -352,6 +394,7 @@
 			files = (
 				BEABEABA227B405B00F7DB6D /* LaunchScreen.storyboard in Resources */,
 				BE13A89E228451A300D32C48 /* InsertDataViewController.xib in Resources */,
+				18BA01B32286B40B00726460 /* Chatmessages.storyboard in Resources */,
 				BEABEAB7227B405B00F7DB6D /* Assets.xcassets in Resources */,
 				BEF62C8C227BFD30005364EC /* GoogleService-Info.plist in Resources */,
 				BEABEAB5227B405900F7DB6D /* Main.storyboard in Resources */,
@@ -469,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BA01BB2286BB8400726460 /* ChatMessagesVC.swift in Sources */,
 				BE8F39AE227C8D610051BE4A /* AuthenticationNetwork.swift in Sources */,
 				BE8DAFB52282C81D00E0B947 /* BookInformationParameter.swift in Sources */,
 				BE59EBEF227EE2E300A80540 /* DashboardViewController.swift in Sources */,
@@ -481,17 +525,21 @@
 				BE13B3D722840CD0001F4E00 /* Category.swift in Sources */,
 				BEF62C83227BEEA2005364EC /* Network.swift in Sources */,
 				BE8F39A6227C60DE0051BE4A /* UserProfile.swift in Sources */,
+				18BA01B92286BA5D00726460 /* ChatMessagesCell.swift in Sources */,
 				BE13B3D922842AE4001F4E00 /* BookItemParameter.swift in Sources */,
 				BEF62C88227BF6FC005364EC /* Extension+Alert.swift in Sources */,
 				BEF62C98227C139C005364EC /* Extension+ViewController.swift in Sources */,
 				BEF62C8A227BF982005364EC /* Extensions.swift in Sources */,
 				BEF62C85227BF3AF005364EC /* Extension+Strings.swift in Sources */,
+				180227A52286FA5400927898 /* FeedCell.swift in Sources */,
 				BE1398D5227C3C1800CA8FF0 /* UserProfileParameter.swift in Sources */,
 				BE6BD8C12283199F00EF5099 /* BaseTableViewController.swift in Sources */,
 				BE8F39AC227C8CB50051BE4A /* RegistrationViewController.swift in Sources */,
 				BE16BC612285123600A2BA4A /* ScanBarCodeViewController.swift in Sources */,
 				BE6BD8BC2283057500EF5099 /* Author.swift in Sources */,
+				180227A32286FA1000927898 /* FeedVC.swift in Sources */,
 				BE8F39A4227C559A0051BE4A /* UserProfileViewController.swift in Sources */,
+				180227A8228701E000927898 /* Message.swift in Sources */,
 				BEF62C90227C01C6005364EC /* MenuTableViewController.swift in Sources */,
 				BEABEAB0227B405900F7DB6D /* AppDelegate.swift in Sources */,
 				BE2D8D9B228440A90027AD6D /* UIBasePopupViewController.swift in Sources */,
@@ -647,7 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resbook/Resbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AV6NSNCMLF;
+				DEVELOPMENT_TEAM = PBBT599Q77;
 				INFOPLIST_FILE = "$(SRCROOT)/Resbook/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -667,7 +715,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resbook/Resbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AV6NSNCMLF;
+				DEVELOPMENT_TEAM = PBBT599Q77;
 				INFOPLIST_FILE = "$(SRCROOT)/Resbook/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

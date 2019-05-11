@@ -51,6 +51,26 @@ extension Network {
         completionHandler(nil)
     }
     
+   public  static func getAllFeedMessages(handler:@escaping(_ messages:[Message])->()) {
+        
+        
+    if self.isLogin {
+        
+        let uid = Auth.auth().currentUser?.uid
+        AppDelegate.sharedInstance.ref.database.reference(withPath: "conversation/receivers/\(uid)/new_message_count").observe(.value) { (snapshot) in
+            
+            if let result =  snapshot.value as? [String:String]{
+                
+//                let message  = Message
+            }
+        }
+    }
+        
+        
+    }
+    
+    
+    
     public static func updateUserProfile(parameter: UserProfileParameter, completionHandler: @escaping (String) -> Void) {
         if self.isLogin {
             let uid = Auth.auth().currentUser!.uid
@@ -86,6 +106,12 @@ extension Network {
             }
         }
     }
+    
+    //get all messages
+    
+    
+    
+    
     
     // Login with social
     public static func loginWithSocial(_ viewController: UIViewController, socialType: LoginType, completionHandler: @escaping (Bool, String)->Void) {
