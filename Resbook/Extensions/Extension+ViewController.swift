@@ -13,6 +13,8 @@ import PINRemoteImage
 public enum StoryBoardName: String {
     case dashboard = "Dashboard"
     case authentication = "Main"
+    case feedMessage = "FeedVC"
+    case chatMessage = "ChatMessages"
 }
 
 extension UIViewController{

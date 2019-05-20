@@ -12,27 +12,53 @@ class FeedCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
     
-    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var userLbl: UILabel!
     
-    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var  statusLbl: UILabel!
+    var showing =  false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func configureCell(profileImage:UIImage,email:String,content:String)  {
+//    
+    func configureCell(feed:FeedMessage)  {
         
-        self.emailLbl.text = email
-        self.contentLbl.text = content
-        self.profileImage.image = profileImage
+        self.userLbl.text = feed._user_id
         
+        
+//        self.userLbl.text = feed.user_id
+//        self.statusLbl.text = String(feed.status)
+
+        if feed.status == 0{
+            userLbl.text = "user not found"
+            print("Not Found")
+
+        }else{
+            
+            print("here your value")
+
+
+        }
+        
+
+
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        if selected{
+            if showing == false{
+                
+                profileImage.isHidden = false
+                showing = true
+            }else{
+                profileImage.isHidden = true
+                showing = false
+            }
+        }
 
-        // Configure the view for the selected state
     }
 
 }

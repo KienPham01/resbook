@@ -32,6 +32,7 @@ class MenuTableViewController: UITableViewController {
     }
     
     private func configUI() {
+        
         imageView.loadImage(url: userProfile?.avatar ?? "", placeHolderImage: #imageLiteral(resourceName: "user"))
         currentNameLabel.text = userProfile?.user_name
         emailLabel.text = userProfile?.mail_address

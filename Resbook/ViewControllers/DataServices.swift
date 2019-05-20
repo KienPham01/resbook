@@ -8,43 +8,56 @@
 
 import Foundation
 import Firebase
-let DB_BASE =  Database.database().reference()
+
 class DataServices {
     static let sharedInstance = DataServices()
+    
+    
     
     // Store object
     var userProfile: UserProfile?
     
-    private var _REF_BASE = DB_BASE
+    var message:Message?
     
-    private var _REF_FEED = DB_BASE.child("conversation")
-    
-    var REF_FEED:DatabaseReference{
-        
-        return _REF_FEED
-    }
+    var feedmessage:Channel?
+
     
     
-    
-    func getAllFeedMessages(handler:@escaping(_ messages:[Message])->()) {
-        
-        var messageArray = [Message]()
-        REF_FEED.observeSingleEvent(of: .value){(feedMessageSnapshot) in
-            
-            
-            guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else {return}
-            
-            for message in feedMessageSnapshot{
-                
-                let content =  message.childSnapshot(forPath: "message").value as! String
-                let senderId = message.childSnapshot(forPath: "sender_id").value as! String
-                let message = Message(content: content, senderId: senderId)
-                messageArray.append(message)
-            }
-            handler(messageArray)
-        }
-        
-        
-        
-    }
+//     public static func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) {
+//        var messageArray = [Message]()
+//
+//        let userID = Auth.auth().currentUser?.uid
+////        ref.child("conversation/receivers/\(userID)/new_message_count").observeSingleEvent(of: .value, with: { (feedMessageSnapshot) in
+//        AppDelegate.sharedInstance.ref.database.reference(withPath: "conversation/receivers/\(userID)/new_message_count").observe(.value) { (feedMessageSnapshot) in
+//
+//            guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+//
+//            for message in feedMessageSnapshot {
+//
+//                let senderId = message.childSnapshot(forPath: "sender_id").value as! String
+//                let content = message.childSnapshot(forPath: "content").value as! String
+//
+//                let message = Message(content: content, senderId: senderId)
+//
+//                messageArray.append(message)
+//
+//            }
+//                handler(messageArray)
+//
+//        }
+//
+//
+//    }
 }
+
+    
+    
+
+
+    
+
+        
+        
+        
+    
+

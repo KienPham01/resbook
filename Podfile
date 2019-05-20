@@ -2,6 +2,7 @@ platform :ios, '9.0'
 
 target 'Resbook' do
   use_frameworks!
+
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'SVProgressHUD'
@@ -16,4 +17,5 @@ pod 'FBSDKShareKit', '4.37.0'
 pod 'GoogleSignIn'
 pod 'SideMenu'
 pod 'Firebase/Storage'
+
 end

@@ -67,7 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // To control navigation bar's translucency.
         UINavigationBar.appearance().isTranslucent = false
         
-        
         FirebaseApp.configure()
         ref = Database.database().reference()
         storageRef = Storage.storage()
@@ -75,16 +74,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         checkingUser()
+//        testAuth()
+        
+        
+        
+    }
+    
+    func testAuth() {
+        
+        if Auth.auth().currentUser == nil{
+            
+            let storyboard  =  UIStoryboard(name: "FeedVC", bundle: Bundle.main)
+            let authVC = storyboard.instantiateViewController(withIdentifier: "FeedVC")
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(authVC, animated: true, completion: nil)
+            
+        }
     }
     
     private func checkingUser() {
         if Auth.auth().currentUser != nil {
+            
+//            Network.getAllFeed { (feedMessage) in
+//
+//                DataServices.sharedInstance.feedmessage = feedMessage
+//            }
             Network.getUserProfile { (userProfile) in
                 DataServices.sharedInstance.userProfile = userProfile
-                let storyboard = UIStoryboard.init(name: StoryBoardName.dashboard.rawValue, bundle: nil)
-                let dashboard = storyboard.instantiateViewController(withIdentifier: "Dashboard")
-                self.window?.rootViewController = dashboard
-            }        
+//                let storyboard = UIStoryboard.init(name: StoryBoardName.dashboard.rawValue
+//                    , bundle: nil)
+//                let dashboard = storyboard.instantiateViewController(withIdentifier:"Dashboard")
+//                self.window?.rootViewController = dashboard
+            }
         } else {
             let navigation = UINavigationController(rootViewController: LoginViewController.instantiateFromStoryboardHelper(storyboardName: .authentication, storyboardId: LoginViewController.className))
             self.window?.rootViewController = navigation

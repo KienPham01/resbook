@@ -7,14 +7,41 @@
 //
 
 import UIKit
+import Firebase
 
 class DashboardViewController: UIViewController {
+    var userProfile = DataServices.sharedInstance.userProfile
+            var feedMessage = [FeedMessage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("your user\(Auth.auth().currentUser?.uid)")
+        
     }
+    
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Network.getUserProfile { (completion) in
+            self.userProfile = completion
+            print("+++\(self.userProfile?.user_id)")
+
+        }
+//        print("+++\(userProfile?.user_id)")
+        
+//        getFeed()
+        
+    }
+    
+    
+    
+//    func getFeed()  {
+//        
+//        print("here your value \(feedMessage)")
+//        
+//        
+//    }
     
 
     /*

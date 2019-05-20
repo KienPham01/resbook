@@ -11,9 +11,16 @@
 		180227A32286FA1000927898 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A22286FA1000927898 /* FeedVC.swift */; };
 		180227A52286FA5400927898 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A42286FA5300927898 /* FeedCell.swift */; };
 		180227A8228701E000927898 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180227A7228701E000927898 /* Message.swift */; };
-		18BA01B32286B40B00726460 /* Chatmessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA01B22286B40B00726460 /* Chatmessages.storyboard */; };
+		180227A92288012C00927898 /* Chatmessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180227AB2288012C00927898 /* Chatmessages.storyboard */; };
+		1808E72F228B2EE600ADF541 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808E72E228B2EE600ADF541 /* InsetTextField.swift */; };
 		18BA01B92286BA5D00726460 /* ChatMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */; };
 		18BA01BB2286BB8400726460 /* ChatMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */; };
+		18D3C554228F278C00033316 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C553228F278C00033316 /* MessageBubbleView.swift */; };
+		18D3C5562290DBBD00033316 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C5552290DBBD00033316 /* Channel.swift */; };
+		18D3C55D2291B39C00033316 /* SearchRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C55C2291B39C00033316 /* SearchRequestVC.swift */; };
+		18D3C55F2291BF2800033316 /* SearchRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C55E2291BF2800033316 /* SearchRequestCell.swift */; };
+		18FB1EEA228BCC280020882F /* ListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB1EE9228BCC280020882F /* ListUser.swift */; };
+		18FB1EEC228C41E80020882F /* FeedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB1EEB228C41E80020882F /* FeedMessage.swift */; };
 		BE1398D5227C3C1800CA8FF0 /* UserProfileParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1398D4227C3C1800CA8FF0 /* UserProfileParameter.swift */; };
 		BE13A89D228451A300D32C48 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13A89B228451A300D32C48 /* InsertDataViewController.swift */; };
 		BE13A89E228451A300D32C48 /* InsertDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE13A89C228451A300D32C48 /* InsertDataViewController.xib */; };
@@ -56,9 +63,16 @@
 		180227A22286FA1000927898 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		180227A42286FA5300927898 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		180227A7228701E000927898 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		18BA01B22286B40B00726460 /* Chatmessages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chatmessages.storyboard; sourceTree = "<group>"; };
+		180227AA2288012C00927898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chatmessages.storyboard; sourceTree = "<group>"; };
+		1808E72E228B2EE600ADF541 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
 		18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesCell.swift; sourceTree = "<group>"; };
 		18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesVC.swift; sourceTree = "<group>"; };
+		18D3C553228F278C00033316 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		18D3C5552290DBBD00033316 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		18D3C55C2291B39C00033316 /* SearchRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestVC.swift; sourceTree = "<group>"; };
+		18D3C55E2291BF2800033316 /* SearchRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestCell.swift; sourceTree = "<group>"; };
+		18FB1EE9228BCC280020882F /* ListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUser.swift; sourceTree = "<group>"; };
+		18FB1EEB228C41E80020882F /* FeedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessage.swift; sourceTree = "<group>"; };
 		41EFC674B9879119583F1EB8 /* Pods-Resbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resbook.debug.xcconfig"; path = "Target Support Files/Pods-Resbook/Pods-Resbook.debug.xcconfig"; sourceTree = "<group>"; };
 		70EF1330CB4937A00484945A /* Pods_Resbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		822C20AD5BBE9A336C0C3216 /* Pods-Resbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resbook.release.xcconfig"; path = "Target Support Files/Pods-Resbook/Pods-Resbook.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				180227A7228701E000927898 /* Message.swift */,
+				18FB1EE9228BCC280020882F /* ListUser.swift */,
+				18FB1EEB228C41E80020882F /* FeedMessage.swift */,
+				18D3C5552290DBBD00033316 /* Channel.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -127,9 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				18BA01B72286B9CE00726460 /* View */,
-				18BA01B22286B40B00726460 /* Chatmessages.storyboard */,
-				18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */,
-				180227A22286FA1000927898 /* FeedVC.swift */,
+				180227AB2288012C00927898 /* Chatmessages.storyboard */,
+				18D3C5572291B32800033316 /* Controller */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -139,8 +155,21 @@
 			children = (
 				18BA01B82286BA5D00726460 /* ChatMessagesCell.swift */,
 				180227A42286FA5300927898 /* FeedCell.swift */,
+				1808E72E228B2EE600ADF541 /* InsetTextField.swift */,
+				18D3C553228F278C00033316 /* MessageBubbleView.swift */,
+				18D3C55E2291BF2800033316 /* SearchRequestCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18D3C5572291B32800033316 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				180227A22286FA1000927898 /* FeedVC.swift */,
+				18BA01BA2286BB8400726460 /* ChatMessagesVC.swift */,
+				18D3C55C2291B39C00033316 /* SearchRequestVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		930F0010F59950B2F2155683 /* Pods */ = {
@@ -334,8 +363,8 @@
 				BEABEAA8227B405900F7DB6D /* Sources */,
 				BEABEAA9227B405900F7DB6D /* Frameworks */,
 				BEABEAAA227B405900F7DB6D /* Resources */,
-				E64BEE795508AF355FCF5838 /* [CP] Embed Pods Frameworks */,
-				3D4123EB7E7DA9DA231892CB /* [CP] Copy Pods Resources */,
+				603DFD65FDF81A0EAFA5AFE9 /* [CP] Embed Pods Frameworks */,
+				BD3E9EC85C71C6B31A0AB1E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,6 +387,7 @@
 				TargetAttributes = {
 					BEABEAAB227B405900F7DB6D = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -394,7 +424,7 @@
 			files = (
 				BEABEABA227B405B00F7DB6D /* LaunchScreen.storyboard in Resources */,
 				BE13A89E228451A300D32C48 /* InsertDataViewController.xib in Resources */,
-				18BA01B32286B40B00726460 /* Chatmessages.storyboard in Resources */,
+				180227A92288012C00927898 /* Chatmessages.storyboard in Resources */,
 				BEABEAB7227B405B00F7DB6D /* Assets.xcassets in Resources */,
 				BEF62C8C227BFD30005364EC /* GoogleService-Info.plist in Resources */,
 				BEABEAB5227B405900F7DB6D /* Main.storyboard in Resources */,
@@ -427,29 +457,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D4123EB7E7DA9DA231892CB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Resbook/Pods-Resbook-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Resbook/Pods-Resbook-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E64BEE795508AF355FCF5838 /* [CP] Embed Pods Frameworks */ = {
+		603DFD65FDF81A0EAFA5AFE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,6 +513,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Resbook/Pods-Resbook-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD3E9EC85C71C6B31A0AB1E1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Resbook/Pods-Resbook-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Resbook/Pods-Resbook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -513,13 +543,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BA01BB2286BB8400726460 /* ChatMessagesVC.swift in Sources */,
+				18D3C5562290DBBD00033316 /* Channel.swift in Sources */,
 				BE8F39AE227C8D610051BE4A /* AuthenticationNetwork.swift in Sources */,
 				BE8DAFB52282C81D00E0B947 /* BookInformationParameter.swift in Sources */,
 				BE59EBEF227EE2E300A80540 /* DashboardViewController.swift in Sources */,
 				BE8F39A8227C6BBA0051BE4A /* DataServices.swift in Sources */,
+				18D3C554228F278C00033316 /* MessageBubbleView.swift in Sources */,
+				18FB1EEC228C41E80020882F /* FeedMessage.swift in Sources */,
 				BEDB11CC227D24EB0053CA8B /* RequestAuthorViewController.swift in Sources */,
 				BE8DAFA022828B2300E0B947 /* CheckBox.swift in Sources */,
 				BEF62C76227BE968005364EC /* LoginViewController.swift in Sources */,
+				18FB1EEA228BCC280020882F /* ListUser.swift in Sources */,
 				BE8DAF9E2282855300E0B947 /* CreateNewBookViewController.swift in Sources */,
 				BE8DAFB12282C7A600E0B947 /* BookManagementNetwork.swift in Sources */,
 				BE13B3D722840CD0001F4E00 /* Category.swift in Sources */,
@@ -530,6 +564,7 @@
 				BEF62C88227BF6FC005364EC /* Extension+Alert.swift in Sources */,
 				BEF62C98227C139C005364EC /* Extension+ViewController.swift in Sources */,
 				BEF62C8A227BF982005364EC /* Extensions.swift in Sources */,
+				18D3C55D2291B39C00033316 /* SearchRequestVC.swift in Sources */,
 				BEF62C85227BF3AF005364EC /* Extension+Strings.swift in Sources */,
 				180227A52286FA5400927898 /* FeedCell.swift in Sources */,
 				BE1398D5227C3C1800CA8FF0 /* UserProfileParameter.swift in Sources */,
@@ -546,13 +581,23 @@
 				BEF62C72227BE4CA005364EC /* BaseViewController.swift in Sources */,
 				BE3E388E22802E2B00CA3B12 /* Supports.swift in Sources */,
 				BE2D8D9A228440A90027AD6D /* PopupViewController.swift in Sources */,
+				18D3C55F2291BF2800033316 /* SearchRequestCell.swift in Sources */,
 				BE13A89D228451A300D32C48 /* InsertDataViewController.swift in Sources */,
+				1808E72F228B2EE600ADF541 /* InsetTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		180227AB2288012C00927898 /* Chatmessages.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180227AA2288012C00927898 /* Base */,
+			);
+			name = Chatmessages.storyboard;
+			sourceTree = "<group>";
+		};
 		BEABEAB3227B405900F7DB6D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -693,6 +738,7 @@
 			baseConfigurationReference = 41EFC674B9879119583F1EB8 /* Pods-Resbook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Resbook/Resbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PBBT599Q77;
@@ -703,6 +749,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reshare.native.v1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -713,6 +760,7 @@
 			baseConfigurationReference = 822C20AD5BBE9A336C0C3216 /* Pods-Resbook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Resbook/Resbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PBBT599Q77;
