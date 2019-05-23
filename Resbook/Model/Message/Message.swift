@@ -18,6 +18,7 @@ public class Message {
 
     private var _content:String = ""
     private var _senderId:String = ""
+    private var _avatar:String = ""
     
 
     var content:String{
@@ -27,10 +28,15 @@ public class Message {
 
         return  _senderId
     }
-    init(content:String,senderId:String) {
+    var avatar:String{
+        
+        return _avatar
+    }
+    init(content:String,senderId:String,avatar:String) {
 
         self._content = content
         self._senderId = senderId
+        self._avatar =  avatar
     }
 
 

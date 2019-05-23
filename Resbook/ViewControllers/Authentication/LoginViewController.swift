@@ -49,6 +49,8 @@ class LoginViewController: BaseViewController, GIDSignInUIDelegate {
                             self.hideLoading()
                         })
                     } else {
+                        
+                     
                         Network.getUserProfile(completionHandler: { (userProfile) in
                             self.hideLoading()
                             DataServices.sharedInstance.userProfile = userProfile
@@ -75,10 +77,10 @@ class LoginViewController: BaseViewController, GIDSignInUIDelegate {
                 })
             }
         }
-        if loginType?.rawValue == LoginType.phonenumber.rawValue {
-            let alert = UIAlertController.Style.alert.controller(message: "Login with phone number doesn't support.", actions: ["OK".alertAction(style: .cancel)])
-            self.present(alert, animated: true, completion: nil)
-        }
+//        if loginType?.rawValue == LoginType.phonenumber.rawValue {
+//            let alert = UIAlertController.Style.alert.controller(message: "Login with phone number doesn't support.", actions: ["OK".alertAction(style: .cancel)])
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {

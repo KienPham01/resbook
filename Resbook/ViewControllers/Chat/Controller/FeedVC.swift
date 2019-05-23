@@ -11,14 +11,19 @@ import Firebase
 
 class FeedVC: UIViewController {
     
-    var messageArray = [String]()
+    var messageArray = [Channel]()
     
     var searchRequest = [FeedMessage]()
+    var listUser  = [ListUser]()
+    var chosenUserArray = [String]()
     
+    var index = IndexPath()
+    var userIds = [String]()
+    
+    var names = ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin"]
 
     @IBOutlet weak var chatLbl: UILabel!
     let userProfile = DataServices.sharedInstance.userProfile
-//    var message = DataServices.sharedInstance.feedmessage
 
     @IBOutlet weak var userNameSearch: UITextField!
     
@@ -35,24 +40,10 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         let uid = Auth.auth().currentUser?.uid
         
-//        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-//
-//            Network.getAllFeed(forUid: (Auth.auth().currentUser?.uid)!, handler: { (returnedFeed) in
-//
-//                self.messageArray =  returnedFeed
-//                self.tableView.reloadData()
-//            })
-        
             print("best of team\(self.messageArray.count)")
-            
-            
-//        })
-            profile1.isHidden = true
-            chatLbl.isHidden = true
         
-//        }
+        
 
-//        print("your user id\(uid)")
        
         configUI()
         
@@ -69,15 +60,12 @@ class FeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+    
+        (userIds.append(Auth.auth().currentUser?.uid ?? ""))
         
-        
-
         
         
     
-        
-        
-        
         
     }
     
@@ -88,25 +76,25 @@ class FeedVC: UIViewController {
             searchRequest = []
             tableView.reloadData()
             
-//            profile1.isHidden = true
-//            chatLbl.isHidden = true
             
         }
         else{
-            
-            profile1.isHidden = false
-            chatLbl.isHidden = false
-            
-            
-            Network.insertUser(withMessage: userNameSearch.text!, forUid: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete) in
+        
+            Network.instance.insertUser(withMessage: userNameSearch.text!, forUid: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete) in
                 
                 if isComplete{
                     
-                    Network.getSearchUser(handler: { (searchResponse) in
+                    Network.instance.getSearchUser(handler: { (searchResponse) in
                         
                         self.searchRequest = searchResponse
                         print("test thu\(self.searchRequest)")
-                        self.tableView.reloadData()
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.tableView.reloadData()
+                        }
+                        
+
                         
                     })
                     
@@ -126,6 +114,23 @@ class FeedVC: UIViewController {
 
         
     }
+    
+    func creteConversation()  {
+        Network.instance.getIds(forUsernames:  chosenUserArray) { (idsArray) in
+            
+            var userIds = idsArray
+            userIds.append((Auth.auth().currentUser?.uid)!)
+            Network.instance.createConversation(forUserIds: userIds, handler: { (conversationCreated) in
+                    if conversationCreated{
+                
+                        self.dismiss(animated: true, completion:  nil)
+                    }
+            
+            })
+            
+        }
+        
+    }
  
     
 
@@ -133,40 +138,72 @@ class FeedVC: UIViewController {
 }
 
 extension FeedVC:UITableViewDataSource,UITableViewDelegate{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if userNameSearch.text != "" {
 
-        return  searchRequest.count
+            return searchRequest.count
+        }
+
+        return messageArray.count
+        
         
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         let cell =  tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell
-//        guard  let cell =  tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell else { return UITableViewCell()}
-        let profileImage = UIImage(named: "user.png")!
-        let message = searchRequest[indexPath.row]
         
-        if message.status == 0 {
+        if let cell =  tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell{
+//            let profileImage = UIImage(named: "user.png")!
+            let searchResult = searchRequest[indexPath.row]
             
-            cell?.textLabel?.text = "User not found"
             
+            Network.instance.getUsername(forUID: searchResult.user_id) { (email) in
+                
+                
+                cell.configureCell(userid: email, status: searchResult.status, avatar: "")
+            }
+            
+            return cell
+        
+        
         }
-        cell?.configureCell(feed: message)
-        
-
-    
-        
-        
-        
-
-    
-        return cell!
+       
+        return FeedCell()
 
         
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        if let cell =  tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell{
+            let searchResult = searchRequest[indexPath.row]
+            
+            
+            chosenUserArray.append(searchResult._user_id)
+            Network.instance.createConversation(forUserIds: chosenUserArray) { (conversationCreated) in
+                
+                if conversationCreated{
+                    let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatMessage")
+                    self.present(chatVC!, animated: true, completion: nil)
+                } else{
+                    print("Please try again")
+                }
+                
+            }
+            
+
+            
+            
+            
+        }
+        
+
+        
+        
+    }
+    
     
 
     
@@ -175,6 +212,8 @@ extension FeedVC:UITableViewDataSource,UITableViewDelegate{
 
 
 extension FeedVC:UITextFieldDelegate{
+    
+    
 
 
 }

@@ -56,6 +56,36 @@ extension Network {
         completionHandler(nil)
     }
     
+    public func getUsername(forUID uid:String,handler:@escaping (_ username:String) -> ()){
+        
+        AppDelegate.sharedInstance.ref.database.reference().child("users").observeSingleEvent(of: .value) {(userSnapshot) in
+            var list = [String]()
+            
+            
+            guard let userSnapshot =  userSnapshot.children.allObjects as? [DataSnapshot] else {return }
+            
+            for user in userSnapshot{
+                
+                if user.key == uid{
+                    
+                    let avatar = user.childSnapshot(forPath: "avatar").value as! String
+                    let email = user.childSnapshot(forPath: "user_name").value as! String
+                
+                    handler(email)
+//                    let listUser = ListUser(user: email, avatar: avatar)
+//                    list.append(listUser)
+
+                }
+
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
     
     
     
@@ -76,7 +106,7 @@ extension Network {
 //
 //
 //    }
-    public static func getSearchUser(handler: @escaping (_ messages: [FeedMessage]) -> ()) {
+    public  func getSearchUser(handler: @escaping (_ messages: [FeedMessage]) -> ()) {
         var messageArray = [FeedMessage]()
 
 
@@ -89,36 +119,21 @@ extension Network {
                     guard  let status  = message.childSnapshot(forPath: "find_status").value else{return}
                     
                     if status as! Int != 0{
+
+                        let user_id = message.childSnapshot(forPath: "user_id").value  as? String
+
+
+                        let message = FeedMessage(user_id: user_id ?? "000", status: status as! Int)
                         
-                            let user_id = message.childSnapshot(forPath: "user_id").value  as! String
                         
-                        
-                        let message1 = FeedMessage(user_id: user_id, status: status as! Int)
-                        
-                        messageArray.append(message1)
-                        
-                    
-                        
+
+                        messageArray.append(message)
+                
+                    }else{
+                        let uid  = ""
+                        let message = FeedMessage(user_id: uid, status: status as! Int )
+                        messageArray.append(message)
                     }
-                
-//
-                    
-                    
-                
-
-//                }
-//                catch{
-//                    let user_id1 = "123"
-//                    let status1 = 0
-//                    let message = FeedMessage(user_id: user_id1 , status: status1)
-//                    messageArray.append(message)
-//
-//
-//
-//                }
-
-                
-
 
 
             }
@@ -132,7 +147,7 @@ extension Network {
     /* upload post*/
     
     
-    public static func insertUser(withMessage message: String,forUid uid:String,withGroupKey groupKey:String?,sendComplete: @escaping (_ _status:Bool) ->()){
+    public func insertUser(withMessage message: String,forUid uid:String,withGroupKey groupKey:String?,sendComplete: @escaping (_ _status:Bool) ->()){
         
         
         if groupKey == nil{
@@ -153,15 +168,66 @@ extension Network {
             for user in userSnapshot {
                 let email = user.childSnapshot(forPath: "").value as! String
                 
-//                if usernames.contains(email) {
-//                    idArray.append(user.key)
-//                }
+                if usernames.contains(email) {
+                    idArray.append(user.key)
+                }
             }
             handler(idArray)
         }
     }
+    
+  
+    public func createConversation(forUserIds ids:[String], handler: @escaping (_ conversation:Bool) -> ()){
+        
+        let uid = Auth.auth().currentUser?.uid
+        AppDelegate.sharedInstance.ref.database.reference(withPath: "conversation/receivers/list_receiver").childByAutoId().updateChildValues(["meber":ids])
+        handler(true)
+
+        
+        
+    }
+    
+    public func uploadPost(withMessage message:String, forUID uid:String, withUserKey userKey:String, sendComplete: @escaping (_ _status:Bool) -> ()){
+        
+        
+        if userKey != nil{
+            
+        AppDelegate.sharedInstance.ref.database.reference().child(userKey).child("message").childByAutoId().updateChildValues(["content":message,"senderId":uid])
+            sendComplete(true)
+        }else{
+            
+            
+        }
+    }
+    public func getAllMessagesFor(channel:Channel, handler: @escaping (_ messagesArray:[Message]) ->()){
+    
+        var channelMessageArray = [Message]()
+        AppDelegate.sharedInstance.ref.database.reference().child(channel.key).child("messages").observeSingleEvent(of: .value) {(channelMessageSnapshot) in
+            
+            guard let channelMessageSnapshot = channelMessageSnapshot.children.allObjects as? [DataSnapshot] else {return }
+            for channelMessage in channelMessageSnapshot{
+                
+                let content = channelMessage.childSnapshot(forPath: "content").value as! String
+                let senderId = channelMessage.childSnapshot(forPath: "senderId").value as! String
+                
+                
+                let channelMessage =  Message(content: content, senderId: senderId, avatar: "")
+                channelMessageArray.append(channelMessage)
+                
+                
+            }
+            handler(channelMessageArray)
+            
+            
+            
+            
+        }
+    
+    
+        
+    }
 //
-    public static func getAllFeed (forUid uid:String,handler: @escaping (_ message:[Channel]) -> ()){
+    public static  func getAllFeed (handler: @escaping (_ message:[Channel]) -> ()){
         
         let id = "6qJtHBfwWiSzjRbCjGRjh0lfurr1"
         var feedArray = [Channel]()
@@ -189,7 +255,7 @@ extension Network {
 
 
     }
-    public static func getEmail(forSearchQuery query:String ,handler:@escaping (_ emailArray:[String]) -> ()){
+    public  func getEmail(forSearchQuery query:String ,handler:@escaping (_ emailArray:[String]) -> ()){
         
         var emailArray = [String] ()
         AppDelegate.sharedInstance.ref.database.reference(withPath: "conversation/seach_user_response").observe(.value){ (userSnapshot) in
@@ -228,7 +294,7 @@ extension Network {
         }
     }
     
-    public static func signUp(parameter: UserProfileParameter, completionHandler: @escaping (Bool, String?) -> Void) {
+    public static  func signUp(parameter: UserProfileParameter, completionHandler: @escaping (Bool, String?) -> Void) {
         Auth.auth().createUser(withEmail: parameter.mail_address, password: parameter.password!) { (result, error) in
             if error != nil {
                 completionHandler(false, error?.localizedDescription ?? "")
@@ -327,7 +393,7 @@ extension Network {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
-    public static func signOut() {
+    public func signOut() {
         try! Auth.auth().signOut()
         GIDSignIn.sharedInstance()?.signOut()
         DataServices.sharedInstance.userProfile = nil

@@ -20,30 +20,44 @@ class FeedCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-//    
-    func configureCell(feed:FeedMessage)  {
+    
+    
+    
+//    func configureCell(profileImage image: UIImage, email: String, isSelected: Bool) {
+//        self.profileImage.image = image
+//        self.userLbl.text = email
+//        if isSelected {
+//            self.statusLbl.text = "Not Found"
+//        } else {
+//        }
+//    }
+    
+    func configureCell(userid:String,status:Int,avatar:String) {
         
-        self.userLbl.text = feed._user_id
         
-        
-//        self.userLbl.text = feed.user_id
-//        self.statusLbl.text = String(feed.status)
-
-        if feed.status == 0{
-            userLbl.text = "user not found"
-            print("Not Found")
-
-        }else{
+        if status == 0{
             
-            print("here your value")
-
-
+            userLbl.text = "User not found "
+            statusLbl.isHidden = true
+            
+            
+        }
+        else{
+            
+            userLbl.text = userid
+            statusLbl.text = String(status)
+            
+            profileImage.image = UIImage(named: avatar)
+            statusLbl.isHidden = false
+            
         }
         
-
-
         
+        
+        
+    
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -19,6 +19,8 @@
 		18D3C5562290DBBD00033316 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C5552290DBBD00033316 /* Channel.swift */; };
 		18D3C55D2291B39C00033316 /* SearchRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C55C2291B39C00033316 /* SearchRequestVC.swift */; };
 		18D3C55F2291BF2800033316 /* SearchRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C55E2291BF2800033316 /* SearchRequestCell.swift */; };
+		18D3C5632293D2F100033316 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C5622293D2F100033316 /* ChatViewModel.swift */; };
+		18D3C5652293DC7B00033316 /* DiffCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C5642293DC7B00033316 /* DiffCalculator.swift */; };
 		18FB1EEA228BCC280020882F /* ListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB1EE9228BCC280020882F /* ListUser.swift */; };
 		18FB1EEC228C41E80020882F /* FeedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB1EEB228C41E80020882F /* FeedMessage.swift */; };
 		BE1398D5227C3C1800CA8FF0 /* UserProfileParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1398D4227C3C1800CA8FF0 /* UserProfileParameter.swift */; };
@@ -71,6 +73,8 @@
 		18D3C5552290DBBD00033316 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		18D3C55C2291B39C00033316 /* SearchRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestVC.swift; sourceTree = "<group>"; };
 		18D3C55E2291BF2800033316 /* SearchRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestCell.swift; sourceTree = "<group>"; };
+		18D3C5622293D2F100033316 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		18D3C5642293DC7B00033316 /* DiffCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffCalculator.swift; sourceTree = "<group>"; };
 		18FB1EE9228BCC280020882F /* ListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUser.swift; sourceTree = "<group>"; };
 		18FB1EEB228C41E80020882F /* FeedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessage.swift; sourceTree = "<group>"; };
 		41EFC674B9879119583F1EB8 /* Pods-Resbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resbook.debug.xcconfig"; path = "Target Support Files/Pods-Resbook/Pods-Resbook.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				18FB1EE9228BCC280020882F /* ListUser.swift */,
 				18FB1EEB228C41E80020882F /* FeedMessage.swift */,
 				18D3C5552290DBBD00033316 /* Channel.swift */,
+				18D3C5622293D2F100033316 /* ChatViewModel.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				BEF62C84227BF3AF005364EC /* Extension+Strings.swift */,
 				BEF62C87227BF6FC005364EC /* Extension+Alert.swift */,
 				BE6BD8C02283199F00EF5099 /* BaseTableViewController.swift */,
+				18D3C5642293DC7B00033316 /* DiffCalculator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -553,12 +559,14 @@
 				BEDB11CC227D24EB0053CA8B /* RequestAuthorViewController.swift in Sources */,
 				BE8DAFA022828B2300E0B947 /* CheckBox.swift in Sources */,
 				BEF62C76227BE968005364EC /* LoginViewController.swift in Sources */,
+				18D3C5632293D2F100033316 /* ChatViewModel.swift in Sources */,
 				18FB1EEA228BCC280020882F /* ListUser.swift in Sources */,
 				BE8DAF9E2282855300E0B947 /* CreateNewBookViewController.swift in Sources */,
 				BE8DAFB12282C7A600E0B947 /* BookManagementNetwork.swift in Sources */,
 				BE13B3D722840CD0001F4E00 /* Category.swift in Sources */,
 				BEF62C83227BEEA2005364EC /* Network.swift in Sources */,
 				BE8F39A6227C60DE0051BE4A /* UserProfile.swift in Sources */,
+				18D3C5652293DC7B00033316 /* DiffCalculator.swift in Sources */,
 				18BA01B92286BA5D00726460 /* ChatMessagesCell.swift in Sources */,
 				BE13B3D922842AE4001F4E00 /* BookItemParameter.swift in Sources */,
 				BEF62C88227BF6FC005364EC /* Extension+Alert.swift in Sources */,

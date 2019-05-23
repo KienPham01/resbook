@@ -41,7 +41,7 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 3:
-            Network.signOut()
+            Network.instance.signOut()
         default:
             break
         }

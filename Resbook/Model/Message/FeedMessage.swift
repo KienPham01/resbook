@@ -9,34 +9,12 @@
 import Foundation
 import ObjectMapper
 
-//public class FeedMessage:Mappable{
-//
-//     var user_id:String = ""
-//     var status:Int = 0
-//
-//    public required convenience init?(map: Map) {
-//        self.init()
-//
-//    }
-//
-//    public func mapping(map: Map) {
-//
-//
-//        user_id <- map["user_id"]
-//        status <- map["find_status"]
-//
-//
-//    }
-//
-//
-//
-//
-//
-//
-//}
+
 public class FeedMessage {
      var user_id:String
      var status:Int
+    
+    
 
     var _user_id:String{
 
@@ -51,14 +29,14 @@ public class FeedMessage {
 
         self.user_id =  user_id
         self.status =   status
-        if status == 0{
-            
-            print("can not find value")
-        }
-        else{
-            
-            print("your value here")
-        }
+//        if status == 0{
+//            
+//            print("can not find value")
+//        }
+//        else{
+//            
+//            print("your value here")
+//        }
     }
     
 

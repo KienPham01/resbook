@@ -23,11 +23,13 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Network.getUserProfile { (completion) in
-            self.userProfile = completion
-            print("+++\(self.userProfile?.user_id)")
-
-        }
+        
+        
+//        Network.getUserProfile { (completion) in
+//            self.userProfile = completion
+//            print("+++\(self.userProfile?.user_id)")
+//
+//        }
 //        print("+++\(userProfile?.user_id)")
         
 //        getFeed()

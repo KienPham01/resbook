@@ -7,25 +7,25 @@
 //
 
 import Foundation
-struct  ListUser{
+public class ListUser{
     
-//    private var _chanel_id:String
-//    private var _avatar:String
-//    var user:String{
-//        
-//        return _user
-//    }
-//    var avatar:String
-//    {
-//        
-//        return _avatar
-//    }
-//    init(user:String,avatar:String) {
-//        
-//        self._user = user
-//        self._avatar =  avatar
-//        
-//    }
+    private var _user:String
+    private var _avatar:String
+    var user:String{
+        
+        return _user
+    }
+    var avatar:String
+    {
+        
+        return _avatar
+    }
+    init(user:String,avatar:String) {
+        
+        self._user  = user
+        self._avatar =  avatar
+        
+    }
     
     
 }
